@@ -19,7 +19,7 @@ class CreateMealOfTheDayIngredientsTable extends Migration
             $table->foreign('meal_of_the_day_id')->references('id')->on('meal_of_the_days')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedInteger('meal_ingredient_id');
             $table->foreign('meal_ingredient_id')->references('id')->on('meal_ingredients')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('unit_id');
+            $table->unsignedInteger('unit_id')->nullable();
             $table->foreign('unit_id')->references('id')->on('units')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('quantity')->default(0);
             $table->timestamps();
